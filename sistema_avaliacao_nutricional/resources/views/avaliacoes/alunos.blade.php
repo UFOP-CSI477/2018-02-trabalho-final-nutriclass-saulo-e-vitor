@@ -19,8 +19,8 @@
   @foreach ($alunos as $r)
 
   <tr>
-    <td><a href="{{route('alunos.show', $r->id )}}">{{ $r->id}}</a> </td>
-    <td><a href="{{route('alunos.show', $r->id )}}">{{ $r->nome }}</a> </td>
+    <td><a href="{{route('avaliacao.show_avaliacao', $r->id )}}">{{ $r->id}}</a> </td>
+    <td><a href="{{route('avaliacao.show_avaliacao', $r->id )}}">{{ $r->nome }}</a> </td>
     <td>{{ $r->matricula }} </td>
     <td>{{ date( 'd/m/Y' , strtotime($r->data_nascimento)) }}</td>
 

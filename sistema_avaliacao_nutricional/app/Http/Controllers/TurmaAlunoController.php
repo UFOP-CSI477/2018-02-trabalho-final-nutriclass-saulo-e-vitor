@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Turma;
+use App\Aluno;
+use App\TurmaAluno;
+use DB;
 
 class TurmaAlunoController extends Controller
 {
@@ -14,6 +18,8 @@ class TurmaAlunoController extends Controller
     public function index()
     {
         //
+        $turmas = Turma::all();
+        return view('turma_alunos.index')->with('turmas', $turmas);
     }
 
     /**
@@ -21,9 +27,10 @@ class TurmaAlunoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Turma $turma)
     {
         //
+
     }
 
     /**
@@ -35,6 +42,10 @@ class TurmaAlunoController extends Controller
     public function store(Request $request)
     {
         //
+        TurmaAluno::create($request->all());
+        return redirect()->route('turma_aluno.turma',$request->turma_id);
+
+
     }
 
     /**
@@ -43,11 +54,27 @@ class TurmaAlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Turma $turma)
     {
         //
+
+        return view('turma_alunos.show',['turma' => $turma]);
     }
 
+    public function showTurma($id)
+    {
+        //
+        $turma = Turma::find($id);
+        $alunos= Aluno::all();
+        $alunosturma = DB::table('turma_alunos')
+        ->join('alunos', function ($join) use($id) {
+            $join->on('turma_alunos.aluno_id', '=', 'alunos.id')
+                ->where('turma_alunos.turma_id', '=', $id);
+        })
+        ->get();
+        //dd($turma->all());
+        return view('turma_alunos.show',['turma' => $turma,'alunos' => $alunos, 'alunosturma' => $alunosturma]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -77,8 +104,20 @@ class TurmaAlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function delete($id1,$id2)
+     {
+         //
+
+         DB::delete('delete from turma_alunos where turma_id = ? and aluno_id = ? ',[$id1,$id2]);
+         session()->flash('mensagem','Aluno Excluído da turma');
+         return redirect()->route('turma_aluno.turma',$id1);
+     }
+
+    public function destroy(TurmaAluno $turmaaluno)
     {
         //
+        $turmaaluno->delete();
+        session()->flash('mensagem','Aluno Excluído com sucesso');
+        return redirect()->route('turmas.index');
     }
 }

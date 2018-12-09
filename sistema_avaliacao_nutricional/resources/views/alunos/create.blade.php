@@ -1,23 +1,59 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('conteudo')
-
-<h1>Inserir Alunos</h1>
+@section('content')
+<div class="jumbotron">
+  <h1>Novo Aluno</h1>
+</div>
    <form class="" action="/alunos" method="post">
      @csrf
-     <p>Matrícula: <input type="text" name="matricula"></p>
-     <p>Nome: <input type="text" name="nome"></p>
-     <p>Data de Nascimento: <input type="text" name="data_nascimento"></p>
-     <p>Sexo: <input type="text" name="sexo"></p>
-     <p>Certidao: <input type="text" name="certidao"></p>
-     <p>Telefone: <input type="text" name="telefone"></p>
-     <p>Nome da Mãe: <input type="text" name="nome_mae"></p>
-     <p>Nome do Pai: <input type="text" name="nome_pai"></p>
-     <p>Endereço: <input type="text" name="endereco"></p>
-     <div>&nbsp;</div>
-     <input type="submit" name="btnSalvar" value="Incluir">
-     <div>&nbsp;</div>
-     <a href="#" class="badge badge-primary">Voltar</a>
-     <div>&nbsp;</div>
+     <div class="form-row">
+       <div class="form-group col-md-4">
+         <label for="matricula">Matrícula:</label>
+         <input type="text" class="form-control" id="matricula" name="matricula">
+       </div>
+       <div class="form-group col-md-8">
+         <label for="nome">Nome:</label>
+         <input type="text" class="form-control" id="nome" name="nome">
+       </div>
+     </div>
+
+     <div class="form-row">
+       <div class="form-group col-md-3">
+         <label for="data_nascimento">Data de Nascimento:</label>
+         <input type="text" class="form-control" id="data_nascimento" name="data_nascimento">
+       </div>
+       <div class="form-group col-md-3">
+         <label for="sexo">Sexo:</label>
+         <select name="sexo" id="sexo" onchange="" class="form-control form-control">
+  				<option value="0" selected="selected">Selecione</option>
+  				<option value="1">Feminino</option>
+  				<option value="2">Masculino</option>
+        </select>
+       </div>
+       <div class="form-group col-md-3">
+         <label for="certidao">Número da Certidão de Nasc.:</label>
+         <input type="text" class="form-control" id="certidao" name="certidao">
+       </div>
+       <div class="form-group col-md-3">
+         <label for="telefone">Telefone:</label>
+         <input type="text" class="form-control" id="telefone" name="telefone">
+       </div>
+     </div>
+     <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="nome_mae">Nome da Mãe:</label>
+          <input type="text" class="form-control" id="nome_mae" name="nome_mae">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="nome_pai">Nome do Pai:</label>
+          <input type="text" class="form-control" id="nome_pai" name="nome_pai">
+       </div>
+     </div>
+     <div class="form-group">
+       <label for="endereco">Endereço Completo:</label>
+       <input type="text" class="form-control" id="endereco" name="endereco">
+     </div>
+     <input type="submit" name="btnSalvar" class="btn btn-primary" value="Incluir">
+     <a href="#" class="btn btn-secondary">Voltar</a>
    </form>
 @endsection

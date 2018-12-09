@@ -61,9 +61,10 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Aluno $aluno)
     {
         //
+          return view('alunos.edit',['aluno' => $aluno]);
     }
 
     /**
@@ -73,9 +74,13 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Aluno $aluno)
     {
         //
+        $aluno->fill($request->all());
+        $aluno->save();
+
+        return redirect()->route('alunos.show',$aluno->id);
     }
 
     /**

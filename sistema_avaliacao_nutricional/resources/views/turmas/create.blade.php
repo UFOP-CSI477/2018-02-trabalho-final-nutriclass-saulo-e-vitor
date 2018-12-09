@@ -1,20 +1,49 @@
-@extends('layout')
+@extends('layouts.app')
 
-@section('conteudo')
+@section('content')
 
-<h1>Inserir Turmas</h1>
-   <form class="" action="/turmas" method="post">
-     @csrf
-     <p>Nome: <input type="text" name="nome"></p>
-     <p>Escolaridade: <input type="text" name="escolaridade"></p>
-     <p>Ano: <input type="text" name="ano"></p>
-     <p>Turno: <input type="text" name="turno"></p>
-     <p>Sala: <input type="text" name="sala"></p>
-     <p>Professor: <input type="text" name="professor"></p>
-     <div>&nbsp;</div>
-     <input type="submit" name="btnSalvar" value="Incluir">
-     <div>&nbsp;</div>
-     <a href="#" class="badge badge-primary">Voltar</a>
-     <div>&nbsp;</div>
-   </form>
+<div class="jumbotron">
+  <h1>Nova Turma</h1>
+</div>
+ <form class="" action="/turmas" method="post">
+   @csrf
+   <div class="form-group">
+     <label for="nome">Nome:</label>
+     <input type="text" class="form-control" id="nome" name="nome">
+   </div>
+   <div class="form-row">
+     <div class="form-group col-md-4">
+       <label for="escolaridade">Escolaridade:</label>
+       <input type="text" class="form-control" id="escolaridade" name="escolaridade">
+     </div>
+     <div class="form-group col-md-4">
+       <label for="ano">Ano:</label>
+       <input type="text" class="form-control" id="ano" name="ano">
+     </div>
+     <div class="form-group col-md-4">
+       <label for="turno">Turno:</label>
+       <select name="turno" id="turno" onchange="" class="form-control form-control">
+				<option value="0" selected="selected">Selecione</option>
+				<option value="1">Manhã</option>
+				<option value="2">Tarde</option>
+				<option value="3">Noite</option>
+        <option value="4">Integral</option>
+			</select>
+     </div>
+   </div>
+   <div class="form-row">
+      <div class="form-group col-md-4">
+        <label for="Sala">Sala:</label>
+        <input type="text" class="form-control" id="sala" name="sala">
+      </div>
+      <div class="form-group col-md-8">
+        <label for="Professor">Professor Responsável:</label>
+        <input type="text" class="form-control" id="professor" name="professor">
+      </div>
+   </div>
+
+   <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">
+   <a href="#" class="btn btn-secondary">Voltar</a>
+   <div>&nbsp;</div>
+ </form>
 @endsection

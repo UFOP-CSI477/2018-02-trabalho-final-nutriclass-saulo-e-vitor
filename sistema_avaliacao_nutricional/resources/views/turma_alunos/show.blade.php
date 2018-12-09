@@ -5,11 +5,17 @@
  <div class="jumbotron">
    <h1>Turma: {{$turma->nome}}</h1>
  </div>
-  <form class="" action="/turmas" method="post">
+  <form class="" action="/turma_alunos" method="post">
     @csrf
-      <div class="form-group">
-      <label for="nome">Nome:</label>
-      <input type="text" class="form-control" id="nome" name="nome" value="{{$turma->nome}}" disabled>
+    <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="turma_id">Código:</label>
+        <input type="text" class="form-control" id="turma_id" name="turma_id" value="{{$turma->id}}" readonly>
+      </div>
+      <div class="form-group col-md-10">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" value="{{$turma->nome}}" readonly>
+      </div>
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
@@ -53,8 +59,45 @@
          <input type="text" class="form-control" id="professor" name="professor" value="{{$turma->professor}}" disabled>
        </div>
     </div>
+    <div class="form-group">
+      <label for="aluno_id">Selecione um aluno:</label>
+      <select class="form-control form-control" name="aluno_id">
+          @foreach($alunos as $a)
+            <option value="{{$a->id}}">{{$a->nome}}</option>
+          @endforeach
+      </select>
+    </div>
+    <div class="form-group">&nbsp;</div>
+    <input type="submit" name="btnSalvar" class="btn btn-primary" value="Inserir Aluno">
+    <div class="form-group">&nbsp;</div>
 
-    <a href="{{route('turmas.edit',$turma->id)}}" class="btn btn-primary">Editar</a>
-    <a href="#" class="btn btn-secondary">Voltar</a>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Código</th>
+            <th>Matrícula</th>
+            <th>Nome</th>
+            <th>Data de Nascimento</th>
+            <th>Excluir aluno da Turma</th>
+
+
+          </tr>
+        </thead>
+      <tbody>
+      @foreach ($alunosturma as $r)
+
+      <tr>
+        <td>{{ $r->id}} </td>
+        <td>{{ $r->matricula }} </td>
+        <td>{{ $r->nome}} </td>
+        <td>{{ date( 'd/m/Y' , strtotime($r->data_nascimento)) }}</td>
+        <td><a href="{{route('turma_aluno.delete', [$turma->id,$r->id])}}" class="btn btn-danger">Excluir</a></td>
+      </tr>
+      @endforeach
+      </tbody>
+      </table>
   </form>
+  <div class="form-group">&nbsp;</div>
+  <a href="#" class="btn btn-secondary">Voltar</a>
+  <div class="form-group">&nbsp;</div>
 @endsection

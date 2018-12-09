@@ -61,9 +61,10 @@ class TurmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Turma $turma)
     {
         //
+      return view('turmas.edit',['turma' => $turma]);
     }
 
     /**
@@ -73,9 +74,13 @@ class TurmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Turma $turma)
     {
         //
+        $turma->fill($request->all());
+        $turma->save();
+
+        return redirect()->route('turmas.show',$turma->id);
     }
 
     /**

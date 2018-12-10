@@ -5,6 +5,7 @@
 <div class="jumbotron">
   <h1>Aluno: {{$aluno->nome}}</h1>
 </div>
+<div class="form-group">
    <form class="" action="/alunos" method="post">
      @csrf
      <div class="form-row">
@@ -61,6 +62,15 @@
        <input type="text" class="form-control" id="endereco" name="endereco" value="{{$aluno->endereco}}" disabled>
      </div>
      <a href="{{route('alunos.edit',$aluno->id)}}" class="btn btn-primary">Editar</a>
-     <a href="#" class="btn btn-secondary">Voltar</a>
+
    </form>
+ </div>
+   <div class="form-group">
+     <form class="" action="{{route('alunos.destroy',$aluno->id)}}" method="post" onsubmit="return confirm('Confirma exclusão do Aluno: {{$aluno->nome}}?');">
+       @csrf
+       @method('DELETE')
+       <input type="submit" class="btn btn-danger" value="Excluir">
+      <a href="/alunos" class="btn btn-secondary">Voltar</a>
+     </form>
+   </div>
 @endsection

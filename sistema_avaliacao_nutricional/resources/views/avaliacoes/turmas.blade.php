@@ -5,6 +5,7 @@
 <div class="jumbotron">
   <h1>Avaliações - Consultas</h1>
 </div>
+<label>Selecione uma Turma:</label>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -28,7 +29,7 @@
   @endforeach
   </tbody>
   </table>
-
- <a href="#" class="btn btn-secondary">Voltar</a>
+  
+ <a href="/home" class="btn btn-secondary">Voltar</a>
  <div>&nbsp;</div>
 @endsection

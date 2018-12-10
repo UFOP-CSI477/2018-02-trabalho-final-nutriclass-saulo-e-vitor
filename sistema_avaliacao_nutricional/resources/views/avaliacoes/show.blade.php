@@ -127,7 +127,7 @@
       </div>
     </div>
     <input type="submit" name="btnSalvar" class="btn btn-primary" value="Concluir Avaliação">
-    <a href="#" class="btn btn-secondary">Voltar</a>
+    <a href="/avaliacoes" class="btn btn-secondary">Voltar</a>
   </form>
   <div class="form-group">&nbsp;</div>
 @endsection

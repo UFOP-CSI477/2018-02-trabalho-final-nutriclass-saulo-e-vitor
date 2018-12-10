@@ -24,7 +24,7 @@
 
    <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">
    <div>&nbsp;</div>
-   <a href="#" class="btn btn-secondary">Voltar</a>
+   <a href="/home" class="btn btn-secondary">Voltar</a>
    <div>&nbsp;</div>
  </form>
 @endsection

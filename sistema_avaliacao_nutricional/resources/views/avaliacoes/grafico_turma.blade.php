@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="jumbotron">
-  <h1>Turmas</h1>
+  <h1>Relatório por Turma</h1>
 </div>
-<label for="escolaridade">Selecione uma Turma:</label>
+<label>Selecione uma Turma:</label>
 <table class="table table-striped">
     <thead>
       <tr>
@@ -16,11 +16,12 @@
       </tr>
     </thead>
   <tbody>
+
   @foreach ($turmas as $r)
 
   <tr>
-    <td><a href="{{route('turmas.show', $r->id )}}">{{ $r->id}}</a> </td>
-    <td><a href="{{route('turmas.show', $r->id )}}">{{ $r->nome }}</a> </td>
+    <td><a href="{{route('avaliacao.countTurma', $r)}}">{{ $r->id}}</a> </td>
+    <td><a href="{{route('avaliacao.countTurma', $r)}}">{{ $r->nome }}</a> </td>
     <td>{{ $r->professor}} </td>
     <td>{{ $r->ano}}</td>
   </tr>
@@ -28,7 +29,6 @@
   @endforeach
   </tbody>
   </table>
-
 
  <a href="/home" class="btn btn-secondary">Voltar</a>
  <div>&nbsp;</div>

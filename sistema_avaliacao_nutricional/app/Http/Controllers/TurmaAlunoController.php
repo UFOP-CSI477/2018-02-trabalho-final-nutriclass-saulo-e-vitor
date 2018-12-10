@@ -10,6 +10,10 @@ use DB;
 
 class TurmaAlunoController extends Controller
 {
+    public function __construct()
+     {
+       $this->middleware('auth');
+     }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +22,7 @@ class TurmaAlunoController extends Controller
     public function index()
     {
         //
-        $turmas = Turma::all();
+        $turmas = Turma::orderBy('nome')->get();
         return view('turma_alunos.index')->with('turmas', $turmas);
     }
 
@@ -65,7 +69,7 @@ class TurmaAlunoController extends Controller
     {
         //
         $turma = Turma::find($id);
-        $alunos= Aluno::all();
+        $alunos= Aluno::orderBy('nome')->get();
         $alunosturma = DB::table('turma_alunos')
         ->join('alunos', function ($join) use($id) {
             $join->on('turma_alunos.aluno_id', '=', 'alunos.id')

@@ -7,6 +7,10 @@ use App\Turma;
 
 class TurmaController extends Controller
 {
+    public function __construct()
+     {
+       $this->middleware('auth');
+     }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,7 @@ class TurmaController extends Controller
     public function index()
     {
         //
-        $turmas = Turma::all();
+        $turmas = Turma::orderBy('nome')->get();
         return view('turmas.index')->with('turmas', $turmas);
     }
 
@@ -40,6 +44,7 @@ class TurmaController extends Controller
     {
         //
         Turma::create($request->all());
+        session()->flash('mensagem-sucesso','Turma Cadastrada com Sucesso');
         return redirect('/turmas');
     }
 
@@ -79,7 +84,7 @@ class TurmaController extends Controller
         //
         $turma->fill($request->all());
         $turma->save();
-
+        session()->flash('mensagem-sucesso','Aluno Atualizado com Sucesso');
         return redirect()->route('turmas.show',$turma->id);
     }
 
@@ -89,8 +94,11 @@ class TurmaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Turma $turma)
     {
         //
+        $turma->delete();
+        session()->flash('mensagem-sucesso','Turma Excluída com Sucesso');
+        return redirect('/turmas');
     }
 }

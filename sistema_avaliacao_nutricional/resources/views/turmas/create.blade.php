@@ -43,7 +43,7 @@
    </div>
 
    <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">
-   <a href="#" class="btn btn-secondary">Voltar</a>
+   <a href="/turmas" class="btn btn-secondary">Voltar</a>
    <div>&nbsp;</div>
  </form>
 @endsection

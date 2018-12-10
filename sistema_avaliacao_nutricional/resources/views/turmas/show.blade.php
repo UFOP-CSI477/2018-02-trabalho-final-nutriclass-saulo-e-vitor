@@ -5,6 +5,7 @@
  <div class="jumbotron">
    <h1>Turma: {{$turma->nome}}</h1>
  </div>
+ <div class="form-group">
   <form class="" action="/turmas" method="post">
     @csrf
       <div class="form-group">
@@ -55,6 +56,14 @@
     </div>
 
     <a href="{{route('turmas.edit',$turma->id)}}" class="btn btn-primary">Editar</a>
-    <a href="#" class="btn btn-secondary">Voltar</a>
   </form>
+</div>
+  <div class="form-group">
+    <form class="" action="{{route('turmas.destroy',$turma->id)}}" method="post" onsubmit="return confirm('Confirma exclusão da Turma: {{$turma->nome}}?');">
+      @csrf
+      @method('DELETE')
+      <input type="submit" class="btn btn-danger" value="Excluir">
+     <a href="/turmas" class="btn btn-secondary">Voltar</a>
+    </form>
+  </div>
 @endsection

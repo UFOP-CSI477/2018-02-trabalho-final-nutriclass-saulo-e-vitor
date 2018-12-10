@@ -30,6 +30,6 @@
   </tbody>
   </table>
 
- <a href="#" class="btn btn-secondary">Voltar</a>
+ <a href="/home" class="btn btn-secondary">Voltar</a>
  <div>&nbsp;</div>
 @endsection

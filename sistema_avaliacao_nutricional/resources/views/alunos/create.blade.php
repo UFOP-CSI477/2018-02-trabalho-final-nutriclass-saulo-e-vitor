@@ -54,6 +54,6 @@
        <input type="text" class="form-control" id="endereco" name="endereco">
      </div>
      <input type="submit" name="btnSalvar" class="btn btn-primary" value="Incluir">
-     <a href="#" class="btn btn-secondary">Voltar</a>
+     <a href="/alunos" class="btn btn-secondary">Voltar</a>
    </form>
 @endsection

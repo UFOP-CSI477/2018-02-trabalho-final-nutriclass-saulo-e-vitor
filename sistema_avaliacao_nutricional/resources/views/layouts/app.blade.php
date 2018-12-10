@@ -17,22 +17,25 @@
     <script src="/js/jquery.mask.js"></script>
     <script src="/js/imc.js"></script>
     <!--script src="{{ asset('js/app.js') }}" defer></script-->
-
+    <!--Load the AJAX API-->
+   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous'>
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
     <!-- Styles -->
+    <link href="/css/home.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!--link href="{{ asset('css/app.css') }}" rel="stylesheet"-->
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+        <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" >
+                <a class="navbar-brand" href="/home">
                     SGE
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -41,6 +44,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
+                    @if(!Auth::guest())
                     <ul class="navbar-nav mr-auto">
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -91,17 +95,17 @@
                                   Relatórios
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                  <a class="dropdown-item" href="#">
+                                  <a class="dropdown-item" href="/countAll">
                                       Relatório por Estado Nutricional
                                   </a>
-                                  <a class="dropdown-item" href="#">
+                                  <a class="dropdown-item" href="/show3">
                                     Relatório por Turma
                                   </a>
 
                                 </div>
                               </li>
                           </ul>
-
+                          @endif
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -109,11 +113,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
+
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -139,7 +139,6 @@
         </nav>
 
         <main class="py-4">
-          <div class="container">
             <div>&nbsp;</div>
         	  <div>&nbsp;</div>
             @if (Session::has('mensagem-sucesso'))
@@ -148,10 +147,81 @@
             @if (Session::has('mensagem-erro'))
               <div class="alert alert-danger" role="alert">{{ Session::get('mensagem-erro') }}</div>
             @endif
-            @yield('content')
+            <div class="row">
+                <div class="col col-md-3">
 
+                  <div class="nav-side-menu">
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div>&nbsp;</div>
+                    <div class="brand">Sistema de Gerenciamento Escolar</div>
+                    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+                        <div class="menu-list">
+
+                            <ul id="menu-content" class="menu-content collapse out">
+
+                                <li  data-toggle="collapse" data-target="#turmas" class="collapsed">
+                                  <a href="#"><i class="fa fa-graduation-cap"></i> Turmas</a>
+                                </li>
+                                <ul class="collapse" id="turmas">
+                                    <li><a href="/turmas/create">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar</a></li>
+                                    <li><a href="/turmas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar / Editar / Excluir</a></li>
+                                    <li><a href="/turma_alunos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Inserir / Excluir Alunos</a></li>
+                                </ul>
+
+
+                                <li data-toggle="collapse" data-target="#alunos" class="collapsed">
+                                  <a href="#"><i class="fa fa-users fa-lg"></i> Alunos </a>
+                                </li>
+                                <ul class="collapse" id="alunos">
+                                  <li><a href="/alunos/create">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar</a></li>
+                                  <li><a href="/alunos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar / Editar / Excluir</a></li>
+                                </ul>
+
+
+                                <li data-toggle="collapse" data-target="#avaliacoes" class="collapsed">
+                                  <a href="#"><i class="	fas fa-edit"></i> Avaliações </a>
+                                </li>
+                                <ul class="collapse" id="avaliacoes">
+                                  <li><a href="/avaliacoes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar</a></li>
+                                  <li><a href="/show2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar / Excluir</a></li>
+                                </ul>
+
+                                <li data-toggle="collapse" data-target="#relatorios" class="collapsed">
+                                  <a href="#"><i class="fas fa-chart-pie"></i> Relatórios</a>
+                                </li>
+                                <ul class="collapse" id="relatorios">
+                                  <li><a href="/countAll">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Relatório por Estado Nutricional </a></li>
+                                  <li><a href="/show3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Relatório por Turma</a></li>
+                                </ul>
+
+
+
+                            </ul>
+                     </div>
+                  </div>
+                </div>
+                <div class="col col-md-8">
+                    @yield('content')
+                </div>
           </div>
+          <div>&nbsp;</div>
+          <div>&nbsp;</div>
+
         </main>
-    </div>
+    <nav class="navbar navbar-dark fixed-bottom navbar-expand-md  bg-dark text-light" >
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <a class="nav-link toggle">
+            Desenvolvido para Disciplina  CSI477 - SISTEMAS WEB I 2018
+            </a>
+        </div>
+      </div>
+    </nav>
 </body>
+
 </html>

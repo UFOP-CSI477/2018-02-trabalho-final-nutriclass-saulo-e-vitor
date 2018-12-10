@@ -3,7 +3,7 @@
 @section('content')
 
  <div class="jumbotron">
-   <h1>Turma: {{$turma->nome}}</h1>
+   <h1>Inserir/Excluir Alunos: {{$turma->nome}}</h1>
  </div>
   <form class="" action="/turma_alunos" method="post">
     @csrf
@@ -78,7 +78,7 @@
             <th>Matrícula</th>
             <th>Nome</th>
             <th>Data de Nascimento</th>
-            <th>Excluir aluno da Turma</th>
+            <th>Excluir Aluno da Turma</th>
 
 
           </tr>
@@ -98,6 +98,6 @@
       </table>
   </form>
   <div class="form-group">&nbsp;</div>
-  <a href="#" class="btn btn-secondary">Voltar</a>
+  <a href="/turma_alunos" class="btn btn-secondary">Voltar</a>
   <div class="form-group">&nbsp;</div>
 @endsection

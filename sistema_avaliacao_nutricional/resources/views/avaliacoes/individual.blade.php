@@ -82,13 +82,13 @@
          </td>
          <td>{{ $r->observacao }}</td>
          <td>{{date( 'd/m/Y' , strtotime($r->created_at)) }}</td>
-         <td><a href="{{route('avaliacao.delete', [$r->avaliacao_id,$r->id])}}" class="btn btn-danger">Excluir</a></td>
+         <td><a href="{{route('avaliacao.delete', [$r->avaliacao_id,$r->id,$turma_id])}}" class="btn btn-danger">Excluir</a></td>
        </tr>
 
        @endforeach
      </tbody>
      </table>
 
-     <a href="#" class="btn btn-secondary">Voltar</a>
+     <a href="/show_alunos/{{$turma_id}}" class="btn btn-secondary">Voltar</a>
    </form>
 @endsection

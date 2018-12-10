@@ -10,6 +10,10 @@ use DB;
 
 class EvaluationController extends Controller
 {
+    public function __construct()
+       {
+         $this->middleware('auth');
+       }
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +22,7 @@ class EvaluationController extends Controller
     public function index()
     {
         //
-        $turmas = Turma::all();
+        $turmas = Turma::orderBy('nome')->get();
         return view('avaliacoes.index')->with('turmas', $turmas);
     }
 
@@ -42,7 +46,10 @@ class EvaluationController extends Controller
     {
         //
         Evaluation::create($request->all());
-        return redirect('/avaliacoes');
+        session()->flash('mensagem-sucesso','Avaliação Cadastrada com Sucesso!');
+        return redirect()->route('avaliacao.turma',$request->turma_id);
+
+
     }
 
     /**
@@ -75,8 +82,16 @@ class EvaluationController extends Controller
     public function show2()
     {
         //
-        $turmas = Turma::all();
+        $turmas = Turma::orderBy('nome')->get();
         return view('avaliacoes.turmas')->with('turmas', $turmas);
+
+    }
+
+    public function show3()
+    {
+        //
+        $turmas = Turma::orderBy('nome')->get();
+        return view('avaliacoes.grafico_turma')->with('turmas', $turmas);
 
     }
 
@@ -89,11 +104,12 @@ class EvaluationController extends Controller
                 ->where('turma_alunos.turma_id', '=', $id);
         })
         ->get();
-        return view('avaliacoes.alunos')->with('alunos', $alunos);
+        return view('avaliacoes.alunos',['alunos' => $alunos,'turma_id' => $id]);
+
 
     }
 
-    public function showAvaliacao($id)
+    public function showAvaliacao($id,$turma_id)
     {
         //
           $avaliacao = DB::select('select e.id as avaliacao_id,
@@ -108,10 +124,14 @@ class EvaluationController extends Controller
 
         //dd($avaliacao);
         if(empty($avaliacao)){
-          return redirect('/show2');
+
+          session()->flash('mensagem-erro','Aluno Não Possui Avaliações');
+
+          return redirect()->route('avaliacao.showAlunos',$turma_id);
+
         }else{
         //dd($avaliacao->all());
-          return view('avaliacoes.individual')->with('avaliacao', $avaliacao);
+          return view('avaliacoes.individual',['avaliacao' => $avaliacao,'turma_id' => $avaliacao[0]->turma_id]);
         }
     }
     /**
@@ -143,13 +163,34 @@ class EvaluationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function delete($id,$id1)
+     public function delete($id,$id1,$id2)
      {
          //
 
          DB::delete('delete from evaluations where id = ?',[$id]);
-         session()->flash('mensagem','Avaliação Excluída da turma');
-         return redirect()->route('avaliacao.show_avaliacao',$id1);
+         session()->flash('mensagem-sucesso','Avaliação Excluída!');
+         return redirect()->route('avaliacao.show_avaliacao',[$id1, $id2]);
+     }
+
+
+     public function countAll()
+     {
+         //
+         $total = DB::select('select e.id,e.peso, e.altura
+                   from evaluations as e');
+         return view('avaliacoes.estado_geral',['total' => $total]);
+
+     }
+
+     public function countTurma($id)
+     {
+         //
+         $turma = DB::select('select t.id,t.nome
+                   from turmas as t where id = ?',[$id]);
+         $total = DB::select('select e.id,e.peso, e.altura
+                   from evaluations as e where turma_id = ? order by created_at DESC',[$id]);
+         return view('avaliacoes.estado_turma',['total' => $total,'turma' => $turma]);
+
      }
 
     public function destroy(Evaluation $avaliacao)

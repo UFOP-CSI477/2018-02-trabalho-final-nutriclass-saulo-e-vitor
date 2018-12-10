@@ -5,6 +5,7 @@
 <div class="jumbotron">
   <h1>Turmas - Inserir Alunos</h1>
 </div>
+<label>Selecione uma Turma:</label>
 <table class="table table-striped">
     <thead>
       <tr>

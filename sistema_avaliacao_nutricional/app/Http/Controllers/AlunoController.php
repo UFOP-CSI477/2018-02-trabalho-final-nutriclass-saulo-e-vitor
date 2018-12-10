@@ -7,6 +7,10 @@ use App\Aluno;
 
 class AlunoController extends Controller
 {
+    public function __construct()
+     {
+       $this->middleware('auth');
+     }
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +19,7 @@ class AlunoController extends Controller
     public function index()
     {
         //
-        $alunos = Aluno::all();
+        $alunos = Aluno::orderBy('nome')->get();
         return view('alunos.index')->with('alunos', $alunos);
     }
 
@@ -89,8 +93,11 @@ class AlunoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Aluno $aluno)
     {
         //
+        $aluno->delete();
+        session()->flash('mensagem','Aluno Excluído com sucesso');
+        return redirect()->route('alunos.index');
     }
 }

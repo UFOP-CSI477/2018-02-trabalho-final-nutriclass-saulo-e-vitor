@@ -62,8 +62,7 @@
        <input type="text" class="form-control" id="endereco" name="endereco" value="{{$aluno->endereco}}">
      </div>
      <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">
-     <a href="#" class="btn btn-secondary">Voltar</a>
+     <a href="/alunos/{{$aluno->id}}" class="btn btn-secondary">Voltar</a>
    </form>
-   <form class="" action="{{route('estados.destroy',$estado->id)}}" method="post" onsubmit="return confirm('Confirma exclusão do Estado: {{$estado->nome}}?');">
 
 @endsection

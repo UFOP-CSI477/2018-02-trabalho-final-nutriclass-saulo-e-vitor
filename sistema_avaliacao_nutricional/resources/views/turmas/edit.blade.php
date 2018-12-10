@@ -3,7 +3,7 @@
 @section('content')
 
  <div class="jumbotron">
-   <h1>Turma: {{$turma->nome}}</h1>
+   <h1>Editar Turma: {{$turma->nome}}</h1>
  </div>
   <form class="" action="{{route('turmas.update',$turma->id)}}" method="post">
     @csrf
@@ -55,6 +55,6 @@
        </div>
     </div>
     <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">
-    <a href="#" class="btn btn-secondary">Voltar</a>
+    <a href="/turmas/{{$turma->id}}" class="btn btn-secondary">Voltar</a>
   </form>
 @endsection

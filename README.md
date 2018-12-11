@@ -315,6 +315,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 1. ID ou senha do usuário estão incorretos - usuário não autenticado.
 2. O sistema não encontra nenhum registro (gráfico em branco) - a turma não possui alunos com avaliações cadastradas.
 
+
 **Prioridade:** Prioridade alta, a ser implementada após as funções básicas.
 
 **Frequência de uso:** Frequência alta.

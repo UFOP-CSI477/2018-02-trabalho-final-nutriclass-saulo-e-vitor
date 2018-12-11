@@ -39,7 +39,6 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 
 | Código | Nome | Prioridade |
 | ------ | ------ | ------ |
-
 | RF-13|Emitir Relatório por Turma|O usuário poderá emitir um relatório com os diagnósticos de todos os alunos de uma turma específica (Gráfico)|
 | RF-14|Emitir Relatório por Diagnóstico Nutricional|O usuário poderá emitir um relatório geral (Gráfico).|
 
@@ -67,8 +66,10 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 2. O sistema inicia com a tela de login.
 3. A tela de login apresenta dois campos para preenchimento: ID e senha e abaixo dos campos dois botões: “Entrar” Caso o usuário for cadastrado e “Novo Usuário” caso não seja. Para efetuar o login, preencha os campos com o nome e o ID e clique em entrar.
 4. A tela do Sistema principal é carregada com o usuário já autenticado.
+
 <br />**Exceções:**
 1. Não tem como efetuar login sem estar cadastrado
+
 <br />**Prioridade:** Muito alta
 <br />**Canal com ator:** Sistema
 <br />**Frequência de uso:** Usada toda vez que se desejar acessar o sistema.

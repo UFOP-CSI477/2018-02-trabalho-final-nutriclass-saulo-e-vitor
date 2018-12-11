@@ -76,7 +76,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-        <div id="chart_div" class="border"></div>
+        <div id="chart_div" class="border" align="center"></div>
     </div>
   </div>
   <div class="row">&nbsp;</div>

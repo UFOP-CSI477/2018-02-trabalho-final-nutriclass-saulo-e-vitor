@@ -33,10 +33,11 @@
 
 </head>
 <body>
+
     <div id="app">
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" >
                 <a class="navbar-brand" href="/home">
-                    SGE
+                    Sistema de Gerenciamento Nutricional Escolar
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -106,6 +107,7 @@
                               </li>
                           </ul>
                           @endif
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -135,10 +137,11 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
-        </nav>
 
-        <main class="py-4">
+              </nav>
+        </div>
+        <div class="container-fluid">
+        <main class="py-3">
             <div>&nbsp;</div>
         	  <div>&nbsp;</div>
 
@@ -152,9 +155,8 @@
                     <div>&nbsp;</div>
                     <div>&nbsp;</div>
                     <div>&nbsp;</div>
-                    <div>&nbsp;</div>
-                    <div>&nbsp;</div>
-                    <div class="brand">Sistema de Gerenciamento Escolar</div>
+
+                    <div class="brand">Menu Principal</div>
                     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
                         <div class="menu-list">
@@ -202,7 +204,7 @@
                      </div>
                   </div>
                 </div>
-                <div class="col col-md-8">
+                <div class="col col-md-9">
                   @if($errors->any())</p>
                     <div class="alert alert-danger" role="alert">
                     <ul>
@@ -239,6 +241,7 @@
           <div>&nbsp;</div>
 
         </main>
+      </div>
     <nav class="navbar navbar-dark fixed-bottom navbar-expand-md  bg-dark text-light" >
         <div class="container">
           <div class="collapse navbar-collapse" id="navbarSupportedContent">

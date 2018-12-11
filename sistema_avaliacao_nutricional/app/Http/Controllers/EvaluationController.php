@@ -176,8 +176,8 @@ class EvaluationController extends Controller
      public function countAll()
      {
          //
-         $total = DB::select('select e.id,e.peso, e.altura
-                   from evaluations as e');
+         $total = DB::select('select * from evaluations e where e.created_at= (select MAX(created_at)
+         from evaluations e1 where e.aluno_id= e1.aluno_id group by e1.aluno_id)');
          return view('avaliacoes.estado_geral',['total' => $total]);
 
      }
@@ -187,9 +187,11 @@ class EvaluationController extends Controller
          //
          $turma = DB::select('select t.id,t.nome
                    from turmas as t where id = ?',[$id]);
-         $total = DB::select('select e.id,e.peso, e.altura
-                   from evaluations as e where turma_id = ? order by created_at DESC',[$id]);
+         $total = DB::select('select * from evaluations e where e.created_at= (select MAX(created_at)
+         from evaluations e1 where e.aluno_id= e1.aluno_id group by e1.aluno_id) and e.turma_id = ?',[$id]);
          return view('avaliacoes.estado_turma',['total' => $total,'turma' => $turma]);
+
+
 
      }
 

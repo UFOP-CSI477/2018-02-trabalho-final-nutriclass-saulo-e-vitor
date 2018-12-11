@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+Route::get('/', [
+	'uses' => 'HomeController@index',
+	'as' => 'home.index']);
 
 Route::resource('/turmas', 'TurmaController');
 Route::resource('/alunos', 'AlunoController');
@@ -44,6 +44,10 @@ Route::get('/showTurma_avaliacao/{id}', [
 Route::get('/show2', [
 	'uses' => 'EvaluationController@show2',
 	'as' => 'avaliacao.show2']);
+
+Route::post('/find', [
+	'uses' => 'AlunoController@buscar',
+	'as' => 'aluno.buscar']);
 
   Route::get('/show3', [
   	'uses' => 'EvaluationController@show3',

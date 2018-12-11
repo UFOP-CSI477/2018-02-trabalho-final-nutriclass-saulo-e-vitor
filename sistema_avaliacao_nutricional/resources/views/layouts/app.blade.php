@@ -141,13 +141,10 @@
         <main class="py-4">
             <div>&nbsp;</div>
         	  <div>&nbsp;</div>
-            @if (Session::has('mensagem-sucesso'))
-                <div class="alert alert-success" role="alert">{{ Session::get('mensagem-sucesso') }}</div>
-            @endif
-            @if (Session::has('mensagem-erro'))
-              <div class="alert alert-danger" role="alert">{{ Session::get('mensagem-erro') }}</div>
-            @endif
+
+            @if(!Auth::guest())
             <div class="row">
+
                 <div class="col col-md-3">
 
                   <div class="nav-side-menu">
@@ -206,9 +203,27 @@
                   </div>
                 </div>
                 <div class="col col-md-8">
+                    @if (Session::has('mensagem-sucesso'))
+                        <div class="alert alert-success" role="alert">{{ Session::get('mensagem-sucesso') }}</div>
+                    @endif
+                    @if (Session::has('mensagem-erro'))
+                      <div class="alert alert-danger" role="alert">{{ Session::get('mensagem-erro') }}</div>
+                    @endif
                     @yield('content')
                 </div>
+
           </div>
+          @else
+            <div>
+                @if (Session::has('mensagem-sucesso'))
+                    <div class="alert alert-success" role="alert">{{ Session::get('mensagem-sucesso') }}</div>
+                @endif
+                @if (Session::has('mensagem-erro'))
+                  <div class="alert alert-danger" role="alert">{{ Session::get('mensagem-erro') }}</div>
+                @endif
+                @yield('content')
+            </div>
+          @endif
           <div>&nbsp;</div>
           <div>&nbsp;</div>
 

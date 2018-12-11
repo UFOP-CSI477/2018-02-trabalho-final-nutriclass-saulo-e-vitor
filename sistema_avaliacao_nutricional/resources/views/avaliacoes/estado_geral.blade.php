@@ -75,12 +75,13 @@
 </script>
 <div class="container">
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-6">
-      <div id="chart_div"></div>
+
+    <div class="col-md-12">
+      <div id="chart_div" class="border"></div>
     </div>
-    <div class="col-md-5"></div>
+
   </div>
+  <div class="row">&nbsp;</div>
   <a href="/home" class="btn btn-secondary">Voltar</a>
 </div>
 @endsection

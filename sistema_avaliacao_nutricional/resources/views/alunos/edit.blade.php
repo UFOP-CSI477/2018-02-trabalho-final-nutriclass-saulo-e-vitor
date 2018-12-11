@@ -11,18 +11,18 @@
      <div class="form-row">
        <div class="form-group col-md-4">
          <label for="matricula">Matrícula:</label>
-         <input type="text" class="form-control" id="matricula" name="matricula" value="{{$aluno->matricula}}">
+         <input type="text" class="form-control" required id="matricula" name="matricula" value="{{$aluno->matricula}}">
        </div>
        <div class="form-group col-md-8">
          <label for="nome">Nome:</label>
-         <input type="text" class="form-control" id="nome" name="nome" value="{{$aluno->nome}}">
+         <input type="text" class="form-control" required id="nome" name="nome" value="{{$aluno->nome}}">
        </div>
      </div>
 
      <div class="form-row">
        <div class="form-group col-md-3">
          <label for="data_nascimento">Data de Nascimento:</label>
-         <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" value="{{date( 'd/m/Y' , strtotime($aluno->data_nascimento))}}">
+         <input type="text" class="form-control" required id="data_nascimento" name="data_nascimento" value="{{date( 'd/m/Y' , strtotime($aluno->data_nascimento))}}">
        </div>
        <div class="form-group col-md-3">
          <label for="sexo">Sexo:</label>
@@ -40,11 +40,11 @@
        </div>
        <div class="form-group col-md-3">
          <label for="certidao">Número da Certidão de Nasc.:</label>
-         <input type="text" class="form-control" id="certidao" name="certidao" value="{{$aluno->certidao}}">
+         <input type="number" class="form-control" required id="certidao" name="certidao" value="{{$aluno->certidao}}">
        </div>
        <div class="form-group col-md-3">
          <label for="telefone">Telefone:</label>
-         <input type="text" class="form-control" id="telefone" name="telefone" value="{{$aluno->telefone}}">
+         <input type="number" class="form-control" required id="telefone" name="telefone" value="{{$aluno->telefone}}">
        </div>
      </div>
      <div class="form-row">
@@ -59,7 +59,7 @@
      </div>
      <div class="form-group">
        <label for="endereco">Endereço Completo:</label>
-       <input type="text" class="form-control" id="endereco" name="endereco" value="{{$aluno->endereco}}">
+       <input type="text" class="form-control" required id="endereco" name="endereco" value="{{$aluno->endereco}}">
      </div>
      <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">
      <a href="/alunos/{{$aluno->id}}" class="btn btn-secondary">Voltar</a>

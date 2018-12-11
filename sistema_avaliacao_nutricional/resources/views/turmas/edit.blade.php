@@ -10,16 +10,16 @@
     @method('PATCH')
     <div class="form-group">
       <label for="nome">Nome:</label>
-      <input type="text" class="form-control" id="nome" name="nome" value="{{$turma->nome}}">
+      <input type="text" class="form-control" id="nome" required name="nome" value="{{$turma->nome}}">
     </div>
     <div class="form-row">
       <div class="form-group col-md-4">
         <label for="escolaridade">Escolaridade:</label>
-        <input type="text" class="form-control" id="escolaridade" name="escolaridade" value="{{$turma->escolaridade}}">
+        <input type="text" class="form-control" required id="escolaridade" name="escolaridade" value="{{$turma->escolaridade}}">
       </div>
       <div class="form-group col-md-4">
         <label for="ano">Ano:</label>
-        <input type="text" class="form-control" id="ano" name="ano" value="{{$turma->ano}}">
+        <input type="number" class="form-control" required id="ano" name="ano" value="{{$turma->ano}}">
       </div>
       <div class="form-group col-md-4">
         <label for="turno">Turno:</label>
@@ -47,11 +47,11 @@
     <div class="form-row">
        <div class="form-group col-md-4">
          <label for="Sala">Sala:</label>
-         <input type="text" class="form-control" id="sala" name="sala" value="{{$turma->sala}}">
+         <input type="text" class="form-control" required id="sala" name="sala" value="{{$turma->sala}}">
        </div>
        <div class="form-group col-md-8">
          <label for="Professor">Professor Responsável:</label>
-         <input type="text" class="form-control" id="professor" name="professor" value="{{$turma->professor}}">
+         <input type="text" class="form-control" required id="professor" name="professor" value="{{$turma->professor}}">
        </div>
     </div>
     <input type="submit" name="btnSalvar" class="btn btn-primary" value="Salvar">

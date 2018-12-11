@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Aluno;
+use DB;
 
 class AlunoController extends Controller
 {
@@ -45,6 +46,15 @@ class AlunoController extends Controller
         //
         Aluno::create($request->all());
         return redirect('/alunos');
+    }
+
+    public function buscar(Request $request)
+    {
+        //
+        $alunos = DB::table('alunos')
+                ->where('nome', 'like','%'.$request->nome.'%')
+                ->get();
+        return view('alunos.index')->with('alunos', $alunos);
     }
 
     /**

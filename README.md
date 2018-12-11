@@ -222,8 +222,8 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 **Canais com atores secundários:** Não há.
 
 
-## 2.4.2 Caso de Uso: Alterar Turma
-## Ator Primário: Usuário.
+### 2.4.2 Caso de Uso: Alterar Turma
+**Ator Primário: Usuário.**
 **Objetivo no contexto:** O Usuário percebe um erro nas informações da turma e deseja alterá-las.
 **Precondição:** O Usuário deve estar devidamente cadastrado e logado para alterar turmas.
 **Disparador:** o Usuário deseja alterar uma turma.

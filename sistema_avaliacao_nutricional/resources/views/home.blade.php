@@ -13,10 +13,9 @@
                   <div class="row">&nbsp;</div>
                   <div class="row">&nbsp;</div>
                   <div class="row">
-                    <div class="col col-md-3"></div>
-                    <div class="col col-md-8">
-                      <h1>Página Inicial</h1>
-
+                    <div class="col col-md-2"></div>
+                    <div class="col col-md-7">
+                      <img src="/imagens/inicio.png" class="img-responsive" height="120" width="380" alt="página Inicial">
                     </div>
                     <div class="col col-md-1"></div>
                   </div>

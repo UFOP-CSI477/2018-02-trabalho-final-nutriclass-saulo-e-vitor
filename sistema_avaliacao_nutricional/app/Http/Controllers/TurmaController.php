@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Turma;
+use DB;
 
 class TurmaController extends Controller
 {
@@ -43,8 +44,43 @@ class TurmaController extends Controller
     public function store(Request $request)
     {
         //
-        Turma::create($request->all());
+        $mensagens = [
+            'nome.required'         => 'O campo Nome é obrigatório.',
+            'nome.max'              => 'O campo Nome não deve exceder 50 caracteres.',
+            'escolaridade.required'              => 'O campo Escolaridade é obrigatório.',
+            'escolaridade.max'              => 'O campo Escolaridade não deve exceder 30 caracteres.',
+            'ano.required'          => 'O campo Ano é obrigatório.',
+            'ano.max'               => 'O campo Ano não deve exceder 4 números.',
+            'ano.min'               => 'O campo Ano deve ser composto por 4 números.',
+            'turno.required'                 => 'O campo Turno é obrigatório.',
+            'turno.min'                 => 'Escolha um Turno.',
+            'turno.integer'                 => 'O campo CNPJ é obrigatório.',
+            'sala.required'                => 'O campo Sala é obrigatório.',
+            'sala.max'                => 'O campo Sala não deve exceder 3 números.',
+            'professor.required'               => 'O campo Professor é obrigatório.',
+            'professor.max'               => 'O campo Professor não deve exceder 50 caracteres.'
+        ];
+
+        $validatedData = $request->validate([
+          'nome' => 'required|max:50',
+          'escolaridade' => 'required|max:30',
+          'ano' => 'required|max:4|min:4',
+          'turno' => 'required|integer|min:1|max:4',
+          'sala' => 'required|max:3',
+          'professor' => 'required|max:50'],$mensagens);
+        $data = [
+          'nome' => request('nome'),
+          'escolaridade' => request('escolaridade'),
+          'ano' => request('ano'),
+          'turno' => request('turno'),
+          'sala' => request('sala'),
+          'professor' => request('professor') ];
+        Turma::create($data);
         session()->flash('mensagem-sucesso','Turma Cadastrada com Sucesso');
+
+        //return back();
+        //Turma::create($request->all());
+
         return redirect('/turmas');
     }
 
@@ -82,9 +118,39 @@ class TurmaController extends Controller
     public function update(Request $request, Turma $turma)
     {
         //
-        $turma->fill($request->all());
+        $mensagens = [
+            'nome.required'         => 'O campo Nome é obrigatório.',
+            'nome.max'              => 'O campo Nome não deve exceder 50 caracteres.',
+            'escolaridade.required'              => 'O campo Escolaridade é obrigatório.',
+            'escolaridade.max'              => 'O campo Escolaridade não deve exceder 30 caracteres.',
+            'ano.required'          => 'O campo Ano é obrigatório.',
+            'ano.max'               => 'O campo Ano não deve exceder 4 números.',
+            'ano.min'               => 'O campo Ano deve ser composto por 4 números.',
+            'turno.required'                 => 'O campo Turno é obrigatório.',
+            'turno.min'                 => 'Escolha um Turno.',
+            'sala.required'                => 'O campo Sala é obrigatório.',
+            'sala.max'                => 'O campo Sala não deve exceder 3 números.',
+            'professor.required'               => 'O campo Professor é obrigatório.',
+            'professor.max'               => 'O campo Professor não deve exceder 50 caracteres.'
+        ];
+
+        $validatedData = $request->validate([
+          'nome' => 'required|max:50',
+          'escolaridade' => 'required|max:30',
+          'ano' => 'required|max:4|min:4',
+          'turno' => 'required|integer|min:1|max:4',
+          'sala' => 'required|max:3',
+          'professor' => 'required|max:50'],$mensagens);
+        $data = [
+          'nome' => request('nome'),
+          'escolaridade' => request('escolaridade'),
+          'ano' => request('ano'),
+          'turno' => request('turno'),
+          'sala' => request('sala'),
+          'professor' => request('professor') ];
+        $turma->fill($data);
         $turma->save();
-        session()->flash('mensagem-sucesso','Aluno Atualizado com Sucesso');
+        session()->flash('mensagem-sucesso','Turma Atualizada com Sucesso');
         return redirect()->route('turmas.show',$turma->id);
     }
 
@@ -97,8 +163,15 @@ class TurmaController extends Controller
     public function destroy(Turma $turma)
     {
         //
-        $turma->delete();
-        session()->flash('mensagem-sucesso','Turma Excluída com Sucesso');
-        return redirect('/turmas');
+        $alunoturma = DB::select('select * from turma_alunos where turma_id = ?',[$turma->id]);
+
+        if(empty($alunoturma)){
+          $turma->delete();
+          session()->flash('mensagem-sucesso','Turma Excluída com Sucesso');
+          return redirect('/turmas');
+        }else{
+          session()->flash('mensagem-erro','Impossível excluir! Esta turma contém alunos cadastrados.');
+          return redirect('/turmas');
+        }
     }
 }

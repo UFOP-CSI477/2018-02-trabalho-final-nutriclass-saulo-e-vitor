@@ -82,7 +82,7 @@ $(document).ready(function(){
   $('#peso').mask("000.0", {reverse: true});
   $('#altura').mask('0.00');
   $('#imc').mask("000.0", {reverse: true});
-
+  $("#telefone").mask("(00) 00000-0000");
   $("#altura").change(function(){
 
     if ( validarCampo("input[name='peso']") &&

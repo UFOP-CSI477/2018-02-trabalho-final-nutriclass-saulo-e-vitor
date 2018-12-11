@@ -19,8 +19,8 @@ class CreateAlunosTable extends Migration
             $table->char('nome',150);
             $table->date('data_nascimento');
             $table->unsignedinteger('sexo');
-            $table->unsignedinteger('certidao');
-            $table->unsignedinteger('telefone');
+            $table->char('certidao',15);
+            $table->char('telefone',15);
             $table->char('nome_mae',150);
             $table->char('nome_pai',150);
             $table->char('endereco',200);

@@ -203,6 +203,17 @@
                   </div>
                 </div>
                 <div class="col col-md-8">
+                  @if($errors->any())</p>
+                    <div class="alert alert-danger" role="alert">
+                    <ul>
+                        @foreach($errors->all() as $error)</p>
+                    <li>{{ $error }}</li>
+                    <p>@endforeach</ul>
+                    </div>
+                    <p>@elseif(session()->has('success'))</p>
+                    <div class="alert alert-success" role="alert">
+                          {{ session('success') }}</div>
+                    <p>@endif</p>
                     @if (Session::has('mensagem-sucesso'))
                         <div class="alert alert-success" role="alert">{{ Session::get('mensagem-sucesso') }}</div>
                     @endif

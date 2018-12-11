@@ -9,18 +9,18 @@
      <div class="form-row">
        <div class="form-group col-md-4">
          <label for="matricula">Matrícula:</label>
-         <input type="text" class="form-control" required id="matricula" name="matricula">
+         <input type="text" class="form-control"  id="matricula" name="matricula">
        </div>
        <div class="form-group col-md-8">
          <label for="nome">Nome:</label>
-         <input type="text" class="form-control" required id="nome" name="nome">
+         <input type="text" class="form-control"  id="nome" name="nome">
        </div>
      </div>
 
      <div class="form-row">
        <div class="form-group col-md-3">
          <label for="data_nascimento">Data de Nascimento:</label>
-         <input type="text" class="form-control" required id="data_nascimento" name="data_nascimento">
+         <input type="date" class="form-control"  id="data_nascimento" name="data_nascimento">
        </div>
        <div class="form-group col-md-3">
          <label for="sexo">Sexo:</label>
@@ -32,11 +32,11 @@
        </div>
        <div class="form-group col-md-3">
          <label for="certidao">Número da Certidão de Nasc.:</label>
-         <input type="number" class="form-control" required id="certidao" name="certidao">
+         <input type="text" class="form-control"  id="certidao" name="certidao">
        </div>
        <div class="form-group col-md-3">
          <label for="telefone">Telefone:</label>
-         <input type="tel" class="form-control" required id="telefone" name="telefone">
+         <input type="text" class="form-control"  id="telefone" name="telefone">
        </div>
      </div>
      <div class="form-row">
@@ -51,7 +51,7 @@
      </div>
      <div class="form-group">
        <label for="endereco">Endereço Completo:</label>
-       <input type="text" class="form-control" required id="endereco" name="endereco">
+       <input type="text" class="form-control"  id="endereco" name="endereco">
      </div>
      <input type="submit" name="btnSalvar" class="btn btn-primary" value="Incluir">
      <a href="/alunos" class="btn btn-secondary">Voltar</a>

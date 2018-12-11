@@ -82,7 +82,7 @@
          </td>
          <td>{{ $r->observacao }}</td>
          <td>{{date( 'd/m/Y' , strtotime($r->created_at)) }}</td>
-         <td><a href="{{route('avaliacao.delete', [$r->avaliacao_id,$r->id,$turma_id])}}" class="btn btn-danger">Excluir</a></td>
+         <td><a href="{{route('avaliacao.delete', [$r->avaliacao_id,$r->id,$turma_id])}}" onclick="return confirm(Deseja mesmo excluir esta avaliação?');" class="btn btn-danger">Excluir</a></td>
        </tr>
 
        @endforeach

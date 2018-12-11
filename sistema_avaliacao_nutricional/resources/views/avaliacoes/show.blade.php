@@ -94,11 +94,11 @@
       </div>
       <div class="form-group col-md-2">
         <label for="peso">Peso:</label>
-        <input type="text" class="form-control" required id="peso" name="peso">
+        <input type="number" step="any" class="form-control"  id="peso" name="peso">
       </div>
       <div class="form-group col-md-2">
         <label for="altura">Altura:</label>
-        <input type="text" class="form-control" required id="altura" name="altura">
+        <input type="number" step="any" class="form-control"  id="altura" name="altura">
       </div>
       <div class="form-group col-md-2">
         <label for="imc">IMC:</label>

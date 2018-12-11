@@ -45,7 +45,25 @@ class EvaluationController extends Controller
     public function store(Request $request)
     {
         //
-        Evaluation::create($request->all());
+        $mensagens = [
+            'peso.required'         => 'O campo Peso é obrigatório.',
+            'altura.required'              => 'O campo Altura é obrigatório.',
+            'doenca.required'          => 'O campo Doença é obrigatório.',
+            'doenca.min'               => 'Escolha um tipo de Doença.'
+        ];
+
+        $validatedData = $request->validate([
+          'peso' => 'required',
+          'altura' => 'required',
+          'doenca' => 'required|integer|min:1'],$mensagens);
+        $data = [
+          'aluno_id' => request('aluno_id'),
+          'turma_id' => request('turma_id'),
+          'peso' => request('peso'),
+          'altura' => request('altura'),
+          'observacao' => request('observacao'),
+          'doenca' => request('doenca') ];
+        Evaluation::create($data);
         session()->flash('mensagem-sucesso','Avaliação Cadastrada com Sucesso!');
         return redirect()->route('avaliacao.turma',$request->turma_id);
 

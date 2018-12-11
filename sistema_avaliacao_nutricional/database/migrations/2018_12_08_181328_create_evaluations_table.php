@@ -19,7 +19,7 @@ class CreateEvaluationsTable extends Migration
             $table->unsignedinteger('turma_id');
             $table->double('peso', 7, 4);
             $table->double('altura', 3, 2);
-            $table->char('observacao', 250);
+            $table->char('observacao', 250)->nullable();
             $table->unsignedinteger('doenca');
             $table->timestamps();
             $table->foreign('aluno_id')->references('id')->on('alunos');

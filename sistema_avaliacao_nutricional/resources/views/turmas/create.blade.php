@@ -9,16 +9,16 @@
    @csrf
    <div class="form-group">
      <label for="nome">Nome:</label>
-     <input type="text" class="form-control" required id="nome" name="nome">
+     <input type="text" class="form-control"  id="nome" name="nome">
    </div>
    <div class="form-row">
      <div class="form-group col-md-4">
        <label for="escolaridade">Escolaridade:</label>
-       <input type="text" class="form-control" required id="escolaridade" name="escolaridade">
+       <input type="text" class="form-control"  id="escolaridade" name="escolaridade">
      </div>
      <div class="form-group col-md-4">
        <label for="ano">Ano:</label>
-       <input type="number" class="form-control" required id="ano" name="ano">
+       <input type="number" class="form-control"  id="ano" name="ano">
      </div>
      <div class="form-group col-md-4">
        <label for="turno">Turno:</label>
@@ -33,12 +33,12 @@
    </div>
    <div class="form-row">
       <div class="form-group col-md-4">
-        <label for="Sala">Sala:</label>
-        <input type="text" class="form-control" required id="sala" name="sala">
+        <label for="sala">Sala:</label>
+        <input type="number" class="form-control"  id="sala" name="sala">
       </div>
       <div class="form-group col-md-8">
-        <label for="Professor">Professor Responsável:</label>
-        <input type="text" class="form-control" required id="professor" name="professor">
+        <label for="professor">Professor Responsável:</label>
+        <input type="text" class="form-control"  id="professor" name="professor">
       </div>
    </div>
 

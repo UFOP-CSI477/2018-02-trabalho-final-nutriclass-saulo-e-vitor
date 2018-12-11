@@ -49,9 +49,11 @@ class TurmaAlunoController extends Controller
         $alunoturma = DB::select('select * from turma_alunos where aluno_id = ?',[$request->aluno_id]);
         if(empty($alunoturma)){
             TurmaAluno::create($request->all());
+            session()->flash('mensagem-sucesso','Aluno inserido com sucesso!');
+
             return redirect()->route('turma_aluno.turma',$request->turma_id);
         }else{
-            session()->flash('mensagem-erro','Aluno já cadastrado em uma turma!');
+            session()->flash('mensagem-erro','Aluno já cadastrado!');
             return redirect()->route('turma_aluno.turma',$request->turma_id);
         }
 

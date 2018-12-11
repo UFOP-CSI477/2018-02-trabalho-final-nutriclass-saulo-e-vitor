@@ -449,5 +449,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 
 ##  4 Instruções
 Rodar o comando **php artisan db:seed**
+
 **Email do usuário:** admin@admin.com
+
 **Senha:** 123456

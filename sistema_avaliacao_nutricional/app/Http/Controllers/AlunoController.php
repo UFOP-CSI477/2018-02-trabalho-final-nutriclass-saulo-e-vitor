@@ -175,6 +175,7 @@ class AlunoController extends Controller
           'endereco' => request('endereco') ];
         $aluno->fill($data);
         $aluno->save();
+        session()->flash('mensagem-sucesso','Aluno Atualizado com Sucesso');
 
         return redirect()->route('alunos.show',$aluno->id);
     }

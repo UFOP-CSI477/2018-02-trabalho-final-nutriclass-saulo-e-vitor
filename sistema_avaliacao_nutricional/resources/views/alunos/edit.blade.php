@@ -22,7 +22,7 @@
      <div class="form-row">
        <div class="form-group col-md-3">
          <label for="data_nascimento">Data de Nascimento:</label>
-         <input type="text" class="form-control"  id="data_nascimento" name="data_nascimento" value="{{date( 'd/m/Y' , strtotime($aluno->data_nascimento))}}">
+         <input type="date" class="form-control"  id="data_nascimento" name="data_nascimento" value="{{$aluno->data_nascimento}}">
        </div>
        <div class="form-group col-md-3">
          <label for="sexo">Sexo:</label>

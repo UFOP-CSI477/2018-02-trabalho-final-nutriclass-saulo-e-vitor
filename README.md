@@ -75,8 +75,8 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 **Atores secundários:** Não.
 **Canais com atores secundários:** Não.
 
-## 2.2 Requisitos Relacionados a Manter Aluno
-### 2.2.1 Caso de Uso: Inserir Aluno
+### 2.2 Requisitos Relacionados a Manter Aluno
+####  2.2.1 Caso de Uso: Inserir Aluno
 **Ator primário:** Usuário.
 **Objetivo no contexto:** Inserir dados dos alunos.
 **Precondições:** O Usuário deve estar devidamente cadastrado e logado.
@@ -97,7 +97,7 @@ Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno 
 **Atores secundários:** Não há.
 Canais com atores secundários: Não há.
 
-### 2.2.2 Caso de Uso: Alterar Aluno
+####  2.2.2 Caso de Uso: Alterar Aluno
 **Ator primário:** Usuário.
 **Objetivo no contexto:** Alterar dados dos alunos.
 **Precondições:** O Usuário deve estar devidamente cadastrado e logado.
@@ -119,7 +119,7 @@ Canais com atores secundários: Não há.
 **Atores secundários:** Não há.
 **Canais com atores secundários:** Não há.
 
-### 2.2.3 Caso de Uso: Excluir Aluno
+####  2.2.3 Caso de Uso: Excluir Aluno
 **Ator primário:** Usuário.
 **Objetivo no contexto:** Excluir dados dos alunos.
 **Precondições:** O Usuário deve estar devidamente cadastrado e logado.
@@ -141,7 +141,7 @@ Canais com atores secundários: Não há.
 **Atores secundários:** Não há.
 **Canais com atores secundários:** Não há.
 
-### 2.2.4 Caso de Uso: Pesquisar Aluno
+####  2.2.4 Caso de Uso: Pesquisar Aluno
 **Ator primário:** Usuário.
 **Objetivo no contexto:** Inserir dados dos alunos, alterar dados dos alunos, excluir dados dos alunos, pesquisar alunos.
 **Precondições:** O Usuário deve estar devidamente cadastrado e logado.
@@ -163,8 +163,8 @@ Canais com atores secundários: Não há.
 **Atores secundários:** Não há.
 **Canais com atores secundários:** Não há.
 
-## 2.3 Requisitos Relacionados a Avaliar Aluno
-### 2.3.1 Caso de Uso: Avaliação Antropométrica
+###  2.3 Requisitos Relacionados a Avaliar Aluno
+####  2.3.1 Caso de Uso: Avaliação Antropométrica
 **Ator primário:** Nutricionista/Usuário.
 **Objetivo no contexto:** O usuário deverá inserir ou alterar as informações antropométricas (peso e altura) do aluno e o sistema deve calcular o IMC (Índice de Massa Corporal).
 **Precondições:** O Usuário deve estar devidamente cadastrado e logado para Fazer as Avaliações.
@@ -197,8 +197,8 @@ Canais com atores secundários: Não há.
 **Atores secundários:** Não.
 **Canais com atores secundários:** Não.
 
-## 2.4 Requisitos Relacionados a Manter Turma
-### 2.4.1 Caso de Uso: Inserir Turma
+###  2.4 Requisitos Relacionados a Manter Turma
+####  2.4.1 Caso de Uso: Inserir Turma
 **Ator Primário:** Usuário.
 **Objetivo no contexto:** Um novo ano letivo começa e portanto novas turmas são criadas na escola.
 **Precondição:** O Usuário deve estar devidamente cadastrado e logado para criar novas turmas.
@@ -222,7 +222,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 **Canais com atores secundários:** Não há.
 
 
-### 2.4.2 Caso de Uso: Alterar Turma
+####  2.4.2 Caso de Uso: Alterar Turma
 **Ator Primário: Usuário.**
 **Objetivo no contexto:** O Usuário percebe um erro nas informações da turma e deseja alterá-las.
 **Precondição:** O Usuário deve estar devidamente cadastrado e logado para alterar turmas.
@@ -246,7 +246,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 **Atores secundários:** Não há.
 **Canais com atores secundários:** Não há.
 
-### 2.4.3. Caso de Uso: Excluir Turma
+####  2.4.3. Caso de Uso: Excluir Turma
 **Ator Primário:** Usuário.
 **Objetivo no contexto:** O Usuário percebe um erro na turma e deseja excluí-la ou então o ano letivo acaba e as informações já não são mais necessárias.
 **Precondição:** O Usuário deve estar devidamente cadastrado e logado para excluir turmas.
@@ -271,8 +271,8 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 **Atores secundários:** Não há.
 **Canais com atores secundários:** Não há.
 
-## 2.5 Requisitos Relacionados a Manter Relatório
-### 2.5.1 Caso de Uso: Emitir Relatório Geral
+###  2.5 Requisitos Relacionados a Manter Relatório
+####  2.5.1 Caso de Uso: Emitir Relatório Geral
 **Ator primário:** Usuário do sistema (Nutricionista)
 **Objetivo no contexto:** Gerar o relatório individual de um aluno, contendo informações pessoais, a avaliação antropométrica, o diagnóstico da situação nutricional do aluno, quadro de doenças e observações.
 **Precondições:** O usuário deve estar devidamente cadastrado e autenticado no sistema.
@@ -295,7 +295,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 **Atores secundários:** Não há.
 **Canais com atores secundários:** Não há.
 
-### 2.5.2 Caso de Uso: Emitir Relatório por Turma
+####  2.5.2 Caso de Uso: Emitir Relatório por Turma
 **Ator primário:** Usuário do sistema (Nutricionista)
 **Objetivo no contexto:** Gerar o relatório por turma, contendo informações pessoais, a avaliação antropométrica, o diagnóstico da situação nutricional, quadro de doenças e observações de todos os alunos de uma turma.
 **Precondições:** O usuário deve estar devidamente cadastrado e autenticado no sistema.

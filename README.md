@@ -58,30 +58,30 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 ## 2.Detalhamento dos Casos de Uso
 ### 2.1. Requisitos Gerais
 #### 2.1.1 Caso de Uso: Realizar Login
-**Ator primário:** Nutricionista/Usuário.
-**Objetivo no contexto:** Realizar o login no sistema .
-**Precondições:** Uma máquina com acesso ao sistema.
-**Disparador:** Um Usuário/Nutricionista que deseja usar o sistema.
-**Cenários:**
+<br />**Ator primário:** Nutricionista/Usuário.
+<br />**Objetivo no contexto:** Realizar o login no sistema .
+<br />**Precondições:** Uma máquina com acesso ao sistema.
+<br />**Disparador:** Um Usuário/Nutricionista que deseja usar o sistema.
+<br />**Cenários:**
 1. O Usuário abre o sistema.
 2. O sistema inicia com a tela de login.
 3. A tela de login apresenta dois campos para preenchimento: ID e senha e abaixo dos campos dois botões: “Entrar” Caso o usuário for cadastrado e “Novo Usuário” caso não seja. Para efetuar o login, preencha os campos com o nome e o ID e clique em entrar.
 4. A tela do Sistema principal é carregada com o usuário já autenticado.
-**Exceções:**
+<br />**Exceções:**
 1. Não tem como efetuar login sem estar cadastrado
-**Prioridade:** Muito alta
-**Canal com ator:** Sistema
-**Frequência de uso:** Usada toda vez que se desejar acessar o sistema.
-**Atores secundários:** Não.
-**Canais com atores secundários:** Não.
+<br />**Prioridade:** Muito alta
+<br />**Canal com ator:** Sistema
+<br />**Frequência de uso:** Usada toda vez que se desejar acessar o sistema.
+<br />**Atores secundários:** Não.
+<br />**Canais com atores secundários:** Não.
 
 ### 2.2 Requisitos Relacionados a Manter Aluno
 ####  2.2.1 Caso de Uso: Inserir Aluno
-**Ator primário:** Usuário.
-**Objetivo no contexto:** Inserir dados dos alunos.
-**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
-**Disparador:** o Usuário decide realizar inserção de dados de um aluno.
-**Cenários:**
+<br />**Ator primário:** Usuário.
+<br />**Objetivo no contexto:** Inserir dados dos alunos.
+<br />**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
+<br />**Disparador:** o Usuário decide realizar inserção de dados de um aluno.
+<br />**Cenários:**
 1. O Usuário entra no sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -90,19 +90,19 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 6. O Usuário preenche dados dos alunos.
 7. O Usuário realiza sua tarefa
 8. O sistema retorna mensagem de confirmação.
-**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
-**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
-**Canal com ator:** Via sistema disponibilizado.
+<br />**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
+<br />**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
+<br />**Canal com ator:** Via sistema disponibilizado.
 Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno somente uma vez.
-**Atores secundários:** Não há.
+<br />**Atores secundários:** Não há.
 Canais com atores secundários: Não há.
 
 ####  2.2.2 Caso de Uso: Alterar Aluno
-**Ator primário:** Usuário.
-**Objetivo no contexto:** Alterar dados dos alunos.
-**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
-**Disparador:** Usuário decide realizar alteração de dados de um aluno
-**Cenários:**
+<br />**Ator primário:** Usuário.
+<br />**Objetivo no contexto:** Alterar dados dos alunos.
+<br />**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
+<br />**Disparador:** Usuário decide realizar alteração de dados de um aluno
+<br />**Cenários:**
 1. O Usuário entra no sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -112,19 +112,19 @@ Canais com atores secundários: Não há.
 7. O Usuário escolhe a ação.
 8. O Usuário realiza sua tarefa
 9. O sistema retorna mensagem de confirmação.
-**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
-**Prioridade:** Alta, deve ser implementada no começo do projeto.
-**Canal com ator:** Via sistema disponibilizado.
-**Frequência de uso:** média, pois só serão realizados alterações às vezes aos dados de alunos.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
+<br />**Prioridade:** Alta, deve ser implementada no começo do projeto.
+<br />**Canal com ator:** Via sistema disponibilizado.
+<br />**Frequência de uso:** média, pois só serão realizados alterações às vezes aos dados de alunos.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ####  2.2.3 Caso de Uso: Excluir Aluno
-**Ator primário:** Usuário.
-**Objetivo no contexto:** Excluir dados dos alunos.
-**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
-**Disparador:** o Usuário decide realizar exclusão referente aos dados de um aluno.
-**Cenários:**
+<br />**Ator primário:** Usuário.
+<br />**Objetivo no contexto:** Excluir dados dos alunos.
+<br />**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
+<br />**Disparador:** o Usuário decide realizar exclusão referente aos dados de um aluno.
+<br />**Cenários:**
 1. O Usuário entra no sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -134,19 +134,19 @@ Canais com atores secundários: Não há.
 7. O Usuário escolhe a ação.
 8. O Usuário realiza sua tarefa
 9. O sistema retorna mensagem de confirmação.
-**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
-**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
-**Canal com ator:** Via sistema disponibilizado.
-**Frequência de uso:** baixa, pois serão realizados poucas exclusões de alunos.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
+<br />**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
+<br />**Canal com ator:** Via sistema disponibilizado.
+<br />**Frequência de uso:** baixa, pois serão realizados poucas exclusões de alunos.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ####  2.2.4 Caso de Uso: Pesquisar Aluno
-**Ator primário:** Usuário.
-**Objetivo no contexto:** Inserir dados dos alunos, alterar dados dos alunos, excluir dados dos alunos, pesquisar alunos.
-**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
-**Disparador:** o Usuário decide realizar pesquisa de um aluno.
-**Cenários:**
+<br />**Ator primário:** Usuário.
+<br />**Objetivo no contexto:** Inserir dados dos alunos, alterar dados dos alunos, excluir dados dos alunos, pesquisar alunos.
+<br />**Precondições:** O Usuário deve estar devidamente cadastrado e logado.
+<br />**Disparador:** o Usuário decide realizar pesquisa de um aluno.
+<br />**Cenários:**
 1. O Usuário entra no sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -156,20 +156,20 @@ Canais com atores secundários: Não há.
 7. O Usuário escolhe a ação.
 8. O Usuário realiza sua tarefa
 9. O sistema retorna mensagem de confirmação.
-**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
-**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
-**Canal com ator:** Via sistema disponibilizado.
-**Frequência de uso:** Alta, pois só serão realizados consultas constantes aos dados de alunos.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Exceções:** ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
+<br />**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
+<br />**Canal com ator:** Via sistema disponibilizado.
+<br />**Frequência de uso:** Alta, pois só serão realizados consultas constantes aos dados de alunos.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ###  2.3 Requisitos Relacionados a Avaliar Aluno
 ####  2.3.1 Caso de Uso: Avaliação Antropométrica
-**Ator primário:** Nutricionista/Usuário.
-**Objetivo no contexto:** O usuário deverá inserir ou alterar as informações antropométricas (peso e altura) do aluno e o sistema deve calcular o IMC (Índice de Massa Corporal).
-**Precondições:** O Usuário deve estar devidamente cadastrado e logado para Fazer as Avaliações.
-**Disparador:** Um Usuário/Nutricionista que deseja realizar a avaliação antropológica de um aluno.
-**Cenários:**
+<br />**Ator primário:** Nutricionista/Usuário.
+<br />**Objetivo no contexto:** O usuário deverá inserir ou alterar as informações antropométricas (peso e altura) do aluno e o sistema deve calcular o IMC (Índice de Massa Corporal).
+<br />**Precondições:** O Usuário deve estar devidamente cadastrado e logado para Fazer as Avaliações.
+<br />**Disparador:** Um Usuário/Nutricionista que deseja realizar a avaliação antropológica de um aluno.
+<br />**Cenários:**
 1. O usuário abre o sistema.
 2. O sistema inicia com a tela de login.
 3. O usuário executa no sistema.
@@ -187,23 +187,23 @@ Canais com atores secundários: Não há.
 15. Usuário seleciona a opção “Concluir Avaliação”
 16. Uma mensagem é exibida “Avaliação cadastrada com sucesso”
 17. O sistema volta para a tela principal de Avaliações.
-**Exceções:**
+<br />**Exceções:**
 1. O cálculo só será possível se o Usuário informar os dados corretamente.
 2. ID ou senha do usuário estão incorretos - usuário não autenticado.
 3. O sistema não encontra nenhum registro - o aluno não está cadastrado no sistema (veja o caso de uso Inserir Aluno) ou a informação inserida no campo apropriado de busca está incorreta.
-**Prioridade:** Alta
-**Canal com ator:** Sistema
-**Frequência de uso:** Alta, pois os dados variam muito ao decorrer do tempo.
-**Atores secundários:** Não.
-**Canais com atores secundários:** Não.
+<br />**Prioridade:** Alta
+<br />**Canal com ator:** Sistema
+<br />**Frequência de uso:** Alta, pois os dados variam muito ao decorrer do tempo.
+<br />**Atores secundários:** Não.
+<br />**Canais com atores secundários:** Não.
 
 ###  2.4 Requisitos Relacionados a Manter Turma
 ####  2.4.1 Caso de Uso: Inserir Turma
-**Ator Primário:** Usuário.
-**Objetivo no contexto:** Um novo ano letivo começa e portanto novas turmas são criadas na escola.
-**Precondição:** O Usuário deve estar devidamente cadastrado e logado para criar novas turmas.
-**Disparador:** o Usuário deseja criar uma nova turma.
-**Cenário:**
+<br />**Ator Primário:** Usuário.
+<br />**Objetivo no contexto:** Um novo ano letivo começa e portanto novas turmas são criadas na escola.
+<br />**Precondição:** O Usuário deve estar devidamente cadastrado e logado para criar novas turmas.
+<br />**Disparador:** o Usuário deseja criar uma nova turma.
+<br />**Cenário:**
 1. O Usuário executa no sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -212,22 +212,22 @@ Canais com atores secundários: Não há.
 6. O sistema solicita as informações pertinentes às turmas (Nome, Ano, Sala, Turno, entre outros).
 7. O Usuário confirma as informações.
 8. O sistema retorna mensagem de confirmação.
-**Exceções:**
+<br />**Exceções:**
 1. ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
 2. O Usuário não insere todas os dados necessários e confirma, então o sistema emite uma mensagem o alertando para preencher os dados faltantes.
-**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
+<br />**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
 Canal com ator: Via sistema disponibilizado.
 Frequência de uso: Raramente, pois só serão inseridas novas turma no início do ano letivo.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 
 ####  2.4.2 Caso de Uso: Alterar Turma
-**Ator Primário: Usuário.**
-**Objetivo no contexto:** O Usuário percebe um erro nas informações da turma e deseja alterá-las.
-**Precondição:** O Usuário deve estar devidamente cadastrado e logado para alterar turmas.
-**Disparador:** o Usuário deseja alterar uma turma.
-**Cenário:**
+<br />**Ator Primário: Usuário.**
+<br />**Objetivo no contexto:** O Usuário percebe um erro nas informações da turma e deseja alterá-las.
+<br />**Precondição:** O Usuário deve estar devidamente cadastrado e logado para alterar turmas.
+<br />**Disparador:** o Usuário deseja alterar uma turma.
+<br />**Cenário:**
 1. O Usuário executa o sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -237,21 +237,21 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 7. O Usuário seleciona os dados que ele deseja alterar.
 8. O Usuário confirma as informações.
 9. O sistema retorna mensagem de confirmação.
-**Exceções:**
+<br />**Exceções:**
 1. ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
 2. A conexão com o banco de dados falha e as alterações não podem ocorrer.
-**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
-**Canal com ator:** Via sistema disponibilizado.
-**Frequência de uso:** Moderado, pois os dados podem ser inseridos incorretamente por qualquer motivo.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
+<br />**Canal com ator:** Via sistema disponibilizado.
+<br />**Frequência de uso:** Moderado, pois os dados podem ser inseridos incorretamente por qualquer motivo.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ####  2.4.3. Caso de Uso: Excluir Turma
-**Ator Primário:** Usuário.
-**Objetivo no contexto:** O Usuário percebe um erro na turma e deseja excluí-la ou então o ano letivo acaba e as informações já não são mais necessárias.
-**Precondição:** O Usuário deve estar devidamente cadastrado e logado para excluir turmas.
-**Disparador:** o Usuário deseja excluir uma turma.
-**Cenário:**
+<br />**Ator Primário:** Usuário.
+<br />**Objetivo no contexto:** O Usuário percebe um erro na turma e deseja excluí-la ou então o ano letivo acaba e as informações já não são mais necessárias.
+<br />**Precondição:** O Usuário deve estar devidamente cadastrado e logado para excluir turmas.
+<br />**Disparador:** o Usuário deseja excluir uma turma.
+<br />**Cenário:**
 1. O Usuário executa o sistema.
 2. O Usuário insere o seu ID.
 3. O Usuário insere sua senha.
@@ -262,22 +262,22 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 8. O sistema retorna uma mensagem com tom de alerta e com informações sobre as consequências da exclusão da turma e com opção para cancelar.
 9. O Usuário confirma a exclusão.
 10. O sistema retorna mensagem de confirmação.
-**Exceções:**
+<br />**Exceções:**
 1. ID ou senha do Usuário estão incorretos, então ele não entra no sistema.
 2. O Usuário cancela a exclusão quando a mensagem para confirmar a ação aparece.
-**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
-**Canal com ator:** Via sistema disponibilizado.
-**Frequência de uso:** Moderado, pois o Usuário pode querer excluir as turmas por vários motivo.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
+<br />**Canal com ator:** Via sistema disponibilizado.
+<br />**Frequência de uso:** Moderado, pois o Usuário pode querer excluir as turmas por vários motivo.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ###  2.5 Requisitos Relacionados a Manter Relatório
 ####  2.5.1 Caso de Uso: Emitir Relatório Geral
-**Ator primário:** Usuário do sistema (Nutricionista)
-**Objetivo no contexto:** Gerar o relatório individual de um aluno, contendo informações pessoais, a avaliação antropométrica, o diagnóstico da situação nutricional do aluno, quadro de doenças e observações.
-**Precondições:** O usuário deve estar devidamente cadastrado e autenticado no sistema.
-**Disparador:** O usuário decide realizar o acompanhamento nutricional geral da escola.
-**Cenários:**
+<br />**Ator primário:** Usuário do sistema (Nutricionista)
+<br />**Objetivo no contexto:** Gerar o relatório individual de um aluno, contendo informações pessoais, a avaliação antropométrica, o diagnóstico da situação nutricional do aluno, quadro de doenças e observações.
+<br />**Precondições:** O usuário deve estar devidamente cadastrado e autenticado no sistema.
+<br />**Disparador:** O usuário decide realizar o acompanhamento nutricional geral da escola.
+<br />**Cenários:**
 1. O usuário entra no sistema
 2. O usuário insere o seu ID
 3. O usuário insere a sua senha
@@ -286,21 +286,21 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 6. O sistema exibe a tela de Relatórios.
 7. O usuário seleciona “Relatório por Estado Nutricional”
 8. O sistema gera o Relatório em formato de Gráfico.
-**Exceções:**
+<br />**Exceções:**
 1. ID ou senha do usuário estão incorretos - usuário não autenticado.
 2. O sistema não encontra nenhum registro (gráfico em branco) - não há alunos cadastrados.
-**Prioridade:** Prioridade alta, a ser implementada após as funções básicas.
-**Frequência de uso:** Frequência alta.
-**Canal com o ator:** Via software instalado em PC.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Prioridade:** Prioridade alta, a ser implementada após as funções básicas.
+<br />**Frequência de uso:** Frequência alta.
+<br />**Canal com o ator:** Via software instalado em PC.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ####  2.5.2 Caso de Uso: Emitir Relatório por Turma
-**Ator primário:** Usuário do sistema (Nutricionista)
-**Objetivo no contexto:** Gerar o relatório por turma, contendo informações pessoais, a avaliação antropométrica, o diagnóstico da situação nutricional, quadro de doenças e observações de todos os alunos de uma turma.
-**Precondições:** O usuário deve estar devidamente cadastrado e autenticado no sistema.
-**Disparador:** O usuário decide realizar o acompanhamento nutricional dos alunos de uma determinada turma.
-**Cenários:**
+<br />**Ator primário:** Usuário do sistema (Nutricionista)
+<br />**Objetivo no contexto:** Gerar o relatório por turma, contendo informações pessoais, a avaliação antropométrica, o diagnóstico da situação nutricional, quadro de doenças e observações de todos os alunos de uma turma.
+<br />**Precondições:** O usuário deve estar devidamente cadastrado e autenticado no sistema.
+<br />**Disparador:** O usuário decide realizar o acompanhamento nutricional dos alunos de uma determinada turma.
+<br />**Cenários:**
 1. O usuário entra no sistema
 2. O usuário insere o seu ID
 3. O usuário insere a sua senha
@@ -311,14 +311,14 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 8. O sistema apresenta uma tela com as turmas cadastradas
 9. O usuário seleciona uma turma.
 10. O sistema gera o Relatório em formato de gráfico.
-**Exceções:**
+<br />**Exceções:**
 1. ID ou senha do usuário estão incorretos - usuário não autenticado.
 2. O sistema não encontra nenhum registro (gráfico em branco) - a turma não possui alunos com avaliações cadastradas.
-**Prioridade:** Prioridade alta, a ser implementada após as funções básicas.
-**Frequência de uso:** Frequência alta.
-**Canal com o ator:** Via software instalado em PC.
-**Atores secundários:** Não há.
-**Canais com atores secundários:** Não há.
+<br />**Prioridade:** Prioridade alta, a ser implementada após as funções básicas.
+<br />**Frequência de uso:** Frequência alta.
+<br />**Canal com o ator:** Via software instalado em PC.
+<br />**Atores secundários:** Não há.
+<br />**Canais com atores secundários:** Não há.
 
 ## 3 Diagrama de Caso de Uso
 [![Diagrama de Caso de Uso](https://i.imgur.com/QFxEefa.png)](https://imgur.com/QFxEefa)

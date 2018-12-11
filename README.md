@@ -39,7 +39,6 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 
 | Código | Nome | Prioridade |
 | ------ | ------ | ------ |
-
 | RF-13|Emitir Relatório por Turma|O usuário poderá emitir um relatório com os diagnósticos de todos os alunos de uma turma específica (Gráfico)|
 | RF-14|Emitir Relatório por Diagnóstico Nutricional|O usuário poderá emitir um relatório geral (Gráfico).|
 
@@ -447,3 +446,8 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 
 ## 3 Diagrama de Caso de Uso
 [![Diagrama de Caso de Uso](https://i.imgur.com/QFxEefa.png)](https://imgur.com/QFxEefa)
+
+##  4 Instruções
+Rodar o comando **php artisan db:seed**
+**Email do usuário:** admin@admin.com
+**Senha:** 123456

@@ -55,10 +55,10 @@
                             <a class="dropdown-item" href="/turmas/create">
                                 Cadastrar
                             <a class="dropdown-item" href="/turmas">
-                              Consultar/Editar/Excluir
+                              Consultar | Editar | Excluir
                             </a>
                             <a class="dropdown-item" href="/turma_alunos">
-                              Inserir/Excluir Alunos
+                              Inserir | Excluir Alunos
                             </a>
 
                           </div>
@@ -72,7 +72,7 @@
                                   Cadastrar
                               </a>
                               <a class="dropdown-item" href="/alunos">
-                                Consultar/Editar/Excluir
+                                Consultar | Editar | Excluir
                               </a>
 
                             </div>
@@ -86,7 +86,7 @@
                                     Cadastrar
                                 </a>
                                 <a class="dropdown-item" href="/show2">
-                                  Consultar/Excluir
+                                  Consultar | Excluir
                                 </a>
 
                               </div>
@@ -168,8 +168,8 @@
                                 </li>
                                 <ul class="collapse" id="turmas">
                                     <li><a href="/turmas/create">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar</a></li>
-                                    <li><a href="/turmas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar / Editar / Excluir</a></li>
-                                    <li><a href="/turma_alunos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Inserir / Excluir Alunos</a></li>
+                                    <li><a href="/turmas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar | Editar | Excluir</a></li>
+                                    <li><a href="/turma_alunos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Inserir | Excluir Alunos</a></li>
                                 </ul>
 
 
@@ -178,7 +178,7 @@
                                 </li>
                                 <ul class="collapse" id="alunos">
                                   <li><a href="/alunos/create">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar</a></li>
-                                  <li><a href="/alunos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar / Editar / Excluir</a></li>
+                                  <li><a href="/alunos">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar | Editar | Excluir</a></li>
                                 </ul>
 
 
@@ -187,7 +187,7 @@
                                 </li>
                                 <ul class="collapse" id="avaliacoes">
                                   <li><a href="/avaliacoes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cadastrar</a></li>
-                                  <li><a href="/show2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar / Excluir</a></li>
+                                  <li><a href="/show2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Consultar | Excluir</a></li>
                                 </ul>
 
                                 <li data-toggle="collapse" data-target="#relatorios" class="collapsed">

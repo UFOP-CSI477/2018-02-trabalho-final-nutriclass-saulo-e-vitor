@@ -2,9 +2,10 @@
 
 # Sistema de Gerenciamento Nutricional Escolar
 
-  A educação do setor público ainda está muito atrasada quando se trata de utilização das TIC’S (tecnologias de informação e comunicação) em seus processos. “Na área da educação, o uso de recursos tecnológicos em sala de aula ainda é uma realidade distante na maioria das escolas do país.” (Revista Fonte, p.51, dez. 2015).
+A educação do setor público ainda está muito atrasada quando se trata de utilização das TIC’S (tecnologias de informação e comunicação) em seus processos. “Na área da educação, o uso de recursos tecnológicos em sala de aula ainda é uma realidade distante na maioria das escolas do país.” (Revista Fonte, p.51, dez. 2015).
 Apesar de haver um crescimento no uso de computadores e da internet nas escolas, a inclusão de novas tecnologias no ensino ainda depende de vários fatores, dentre eles destacam-se as políticas públicas para a implantação desses novos recursos.
-Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema de Gerenciamento Nutricional Escolar), um sistema que tem como intenção facilitar os processos de acompanhamento nutricional dos alunos dessas instituições de ensino, obedecendo às regras de políticas públicas.
+Com base neste cenário, é proposto um protótipo de um sistema que tem como intenção facilitar os processos de acompanhamento do estado nutricional de alunos de instituições públicas ensino, obedecendo às regras de políticas públicas. O SGE (Sistema de Gerenciamento Nutricional Escolar), apresenta ferramentas para
+gestão de alunos e turmas, avaliação do estado nutrional dos alunos e emissão de relatórios. Nas próximas seções serão descritos os principais requisitos do software e seus respectivos casos de uso.
 
 ## 1. Requisitos Gerais
 
@@ -78,7 +79,7 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 
 **Prioridade:** Muito alta
 
-**Canal com ator:** Sistema
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** Usada toda vez que se desejar acessar o sistema.
 
@@ -111,7 +112,7 @@ Para que essa deficiência seja parcialmente suprida, é proposto o SGE (Sistema
 
 **Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
 
-**Canal com ator:** Via sistema disponibilizado.
+**Canal com ator:** Via navegador.
 
 Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno somente uma vez.
 **Atores secundários:** Não há.
@@ -143,7 +144,7 @@ Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno 
 
 **Prioridade:** Alta, deve ser implementada no começo do projeto.
 
-**Canal com ator:** Via sistema disponibilizado.
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** média, pois só serão realizados alterações às vezes aos dados de alunos.
 
@@ -176,7 +177,7 @@ Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno 
 
 **Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
 
-**Canal com ator:** Via sistema disponibilizado.
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** baixa, pois serão realizados poucas exclusões de alunos.
 
@@ -209,7 +210,7 @@ Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno 
 
 **Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
 
-**Canal com ator:** Via sistema disponibilizado.
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** Alta, pois só serão realizados consultas constantes aos dados de alunos.
 
@@ -254,7 +255,7 @@ Frequência de uso: Baixa, pois só serão realizados inserções de cada aluno 
 
 **Prioridade:** Alta
 
-**Canal com ator:** Sistema
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** Alta, pois os dados variam muito ao decorrer do tempo.
 
@@ -325,7 +326,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 
 **Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
 
-**Canal com ator:** Via sistema disponibilizado.
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** Moderado, pois os dados podem ser inseridos incorretamente por qualquer motivo.
 
@@ -362,7 +363,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 
 **Prioridade:** Prioridade Alta, deve ser implementada no começo do projeto.
 
-**Canal com ator:** Via sistema disponibilizado.
+**Canal com ator:** Via navegador.
 
 **Frequência de uso:** Moderado, pois o Usuário pode querer excluir as turmas por vários motivo.
 
@@ -400,7 +401,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 
 **Frequência de uso:** Frequência alta.
 
-**Canal com o ator:** Via software instalado em PC.
+**Canal com o ator:** Via navegador.
 
 **Atores secundários:** Não há.
 
@@ -437,7 +438,7 @@ Frequência de uso: Raramente, pois só serão inseridas novas turma no início 
 
 **Frequência de uso:** Frequência alta.
 
-**Canal com o ator:** Via software instalado em PC.
+**Canal com o ator:** Via navegador.
 
 **Atores secundários:** Não há.
 

@@ -36,7 +36,7 @@
 
     <div id="app">
         <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark" >
-                <a class="navbar-brand" href="/home">
+                <a class="navbar-brand" href="/home"><i class="fas fa-apple-alt"></i>
                     Sistema de Gerenciamento Nutricional Escolar
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
